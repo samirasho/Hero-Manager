@@ -231,66 +231,9 @@ namespace Hero
 
         private void listBox1_SelectedIndexChanged(object sender, MouseEventArgs e)
         {
-            int index = this.listBox1.IndexFromPoint(e.Location); //<-- holt den aktuellen Index per Mauslocation ab
-            if (index != System.Windows.Forms.ListBox.NoMatches) //<-- macht nur weiter, wenn es einen gültigen Index gibt
-            {
-                //Index ermitteln und heroid extrahieren
-                string selectedRow = listBox1.SelectedItem.ToString(); //<-- Eintrag wird als String geholt
-                string stringBeforeChar = selectedRow.Substring(0, selectedRow.IndexOf(":")); //<-- in dem Fall, ID extrahieren, in dem der Text vor dem Doppelpunkt eingelesen wird
-                heroid = Convert.ToInt32(stringBeforeChar); // in int konvertieren und als heroid speichern
-
-                //Datenbankoperationen, danach zuweisen der Werte
-                database.OpenConnection();
-
-                string query = $"SELECT id, name, klasse, hp, att, def, custom FROM heroes WHERE id = '{heroid}'";
-                DataTable userData = database.ExecuteQuery(query);
-
-                database.CloseConnection();
-
-                if (userData.Rows.Count == 0)
-                {
-                    MessageBox.Show("Hero nicht gefunden.");
-                    return;
-                }
-
-                DataRow userRow = userData.Rows[0];
-                comboBox1.Text = userRow["klasse"].ToString();
-                textBox1.Text = userRow["name"].ToString();
-                trackBar1.Value = Convert.ToInt32(userRow["att"]);
-                trackBar2.Value = Convert.ToInt32(userRow["hp"]);
-                custom = Convert.ToInt32(userRow["custom"]);
-                textBox1.Text = Name;
-                comboBox1.Text = klasse;
-                trackBar1.Value = att;
-                trackBar2.Value = hp;
-                if (custom == 0)
-                {
-
-                }
 
 
-                // Bild zuweisen (optional)
-                switch (listBox1.Text)
-                {
-                    case "Barbarian":
-                        pictureBox1.Image = (Image)Properties.Resources.barbarian;
-                        pictureBox2.Refresh();
-                        panel2.Visible = true;
-                        break;
 
-                    case "Wizard":
-                        pictureBox1.Image = Properties.Resources.wizard;
-                        panel2.Refresh();
-                        panel2.Visible = true;
-                        break;
-
-                    default:
-                        pictureBox1.Image = Properties.Resources.standard;
-                        panel2.Refresh();
-                        panel2.Visible = true;
-                        break;
-                }
-            }
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)

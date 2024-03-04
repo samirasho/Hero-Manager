@@ -206,7 +206,7 @@
             // button2
             // 
             button2.BackColor = Color.IndianRed;
-            button2.Location = new Point(124, 317);
+            button2.Location = new Point(138, 317);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
             button2.TabIndex = 2;
@@ -217,7 +217,7 @@
             // saveButton
             // 
             saveButton.BackColor = SystemColors.Info;
-            saveButton.Location = new Point(27, 317);
+            saveButton.Location = new Point(41, 317);
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(75, 23);
             saveButton.TabIndex = 1;
