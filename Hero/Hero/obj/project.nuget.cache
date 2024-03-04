@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "K/gp8pfd9Wa/+qH3rjoLxy/27u2iclIHpC4LgtopefaB/OHGvNYnqbPL/ewc4Gq72Rr/Pr8YP9mmEZGF3wYEXw==",
+  "dgSpecHash": "dgegkUnlZYJGT9uCZGzNUqw8AIHyQ8WN0S5xqnY9cuIbh6BfuAp2UH5u0PPJjPp8EIv/isfdcfv8g1DRma+T0Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Sami.Rasho\\source\\repos\\Hero\\Hero\\Hero.csproj",
+  "projectFilePath": "C:\\Users\\Sami.Rasho\\Documents\\Hero Manager\\Hero\\Hero\\Hero.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sami.Rasho\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\Sami.Rasho\\.nuget\\packages\\google.protobuf\\3.25.1\\google.protobuf.3.25.1.nupkg.sha512",

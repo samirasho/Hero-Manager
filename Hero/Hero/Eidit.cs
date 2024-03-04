@@ -24,8 +24,8 @@ namespace Hero
         private int heroid;
         private int custom;
         private string klasse;
-        private int hp = 10;
-        private int att = 10;
+        private int hp = 1;
+        private int att = 1;
         private string deleteHero;
         private int selectedRow;
         private string standard;
@@ -108,35 +108,6 @@ namespace Hero
 
         }
 
-
-
-        private void listBox1_SelectedIndexChanged(object sender, MouseEventArgs e)
-        {
-            int index = this.listBox1.IndexFromPoint(e.Location);
-            if (index != System.Windows.Forms.ListBox.NoMatches)
-            {
-                //Index ermitteln und heroid extrahieren
-                string selectedRow = listBox1.SelectedItem.ToString(); //<-- Eintrag wird als String geholt
-                string stringBeforeChar = selectedRow.Substring(0, selectedRow.IndexOf(":")); //<-- in dem Fall, ID extrahieren, in dem der Text vor dem Doppelpunkt eingelesen wird
-                heroid = Convert.ToInt32(stringBeforeChar); // in int konvertieren und als heroid speichern
-
-                //Datenbankoperationen, danach zuweisen der Werte
-                database.OpenConnection();
-
-                string query = $"SELECT id, name, klasse, hp, att, def, custom FROM heroes WHERE id = '{heroid}'";
-                DataTable userData = database.ExecuteQuery(query);
-
-                database.CloseConnection();
-
-                if (userData.Rows.Count == 0)
-                {
-                    MessageBox.Show("Hero nicht gefunden.");
-                    return;
-                }
-
-            }
-        }
-
         private DataTable GetUserData(int userid)
         {
             database.OpenConnection();
@@ -173,7 +144,8 @@ namespace Hero
                     pictureBox1.Hide();
                     trackBar1.Value = hp;
                     trackBar2.Value = att;
-                    textBox1.Text = "" + listBox1.Text;
+                    listBox1.Text = textBox1.Text;
+                    label5.Text = textBox1.Text;
                     break;
 
                 case "Wizard":
@@ -182,7 +154,8 @@ namespace Hero
                     pictureBox2.Hide();
                     trackBar1.Value = hp;
                     trackBar2.Value = att;
-                    textBox1.Text = "" + listBox1.Text;
+                    listBox1.Text = textBox1.Text;
+                    label5.Text = textBox1.Text;
                     break;
 
                 default:
@@ -195,7 +168,7 @@ namespace Hero
             // spiel
             if (heroid < 0)
             {
-                MessageBox.Show("Neuer Held --> INSERT");
+                MessageBox.Show(listBox1.Text);
                 database.OpenConnection();
                 string quer = $"INSERT INTO heroes (name, klasse, hp, att, def, deleted, custom, user_id) VALUES ('{textBox1.Text}', '{comboBox1.Text}', {(int)trackBar1.Value}, {(int)trackBar2.Value}, {(int)trackBar2.Value}, 0, 0, {userid})";
                 Debug.WriteLine(quer);
@@ -256,7 +229,7 @@ namespace Hero
 
         }
 
-        private void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void listBox1_SelectedIndexChanged(object sender, MouseEventArgs e)
         {
             int index = this.listBox1.IndexFromPoint(e.Location); //<-- holt den aktuellen Index per Mauslocation ab
             if (index != System.Windows.Forms.ListBox.NoMatches) //<-- macht nur weiter, wenn es einen gültigen Index gibt
@@ -281,10 +254,10 @@ namespace Hero
                 }
 
                 DataRow userRow = userData.Rows[0];
-                klasse = userRow["klasse"].ToString();
-                Name = userRow["name"].ToString();
-                att = Convert.ToInt32(userRow["att"]);
-                hp = Convert.ToInt32(userRow["hp"]);
+                comboBox1.Text = userRow["klasse"].ToString();
+                textBox1.Text = userRow["name"].ToString();
+                trackBar1.Value = Convert.ToInt32(userRow["att"]);
+                trackBar2.Value = Convert.ToInt32(userRow["hp"]);
                 custom = Convert.ToInt32(userRow["custom"]);
                 textBox1.Text = Name;
                 comboBox1.Text = klasse;
@@ -292,12 +265,12 @@ namespace Hero
                 trackBar2.Value = hp;
                 if (custom == 0)
                 {
-                    
+
                 }
-               
+
 
                 // Bild zuweisen (optional)
-                switch (klasse)
+                switch (listBox1.Text)
                 {
                     case "Barbarian":
                         pictureBox1.Image = (Image)Properties.Resources.barbarian;
@@ -320,6 +293,29 @@ namespace Hero
             }
         }
 
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+            //Index ermitteln und heroid extrahieren
+            string selectedRow = listBox1.SelectedItem.ToString(); //<-- Eintrag wird als String geholt
+            string stringBeforeChar = selectedRow.Substring(0, selectedRow.IndexOf(":")); //<-- in dem Fall, ID extrahieren, in dem der Text vor dem Doppelpunkt eingelesen wird
+            heroid = Convert.ToInt32(stringBeforeChar); // in int konvertieren und als heroid speichern
+
+            //Datenbankoperationen, danach zuweisen der Werte
+            database.OpenConnection();
+
+            string query = $"SELECT id, name, klasse, hp, att, def, custom FROM heroes WHERE id = '{heroid}'";
+            DataTable userData = database.ExecuteQuery(query);
+
+            database.CloseConnection();
+
+            if (userData.Rows.Count == 0)
+            {
+                MessageBox.Show("Hero nicht gefunden.");
+                return;
+            }
+        }
     }
 }
 

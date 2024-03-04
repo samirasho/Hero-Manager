@@ -34,7 +34,6 @@
             trackBar2 = new TrackBar();
             trackBar1 = new TrackBar();
             textBox1 = new TextBox();
-            button1 = new Button();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
@@ -63,7 +62,6 @@
             panel1.Controls.Add(trackBar2);
             panel1.Controls.Add(trackBar1);
             panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(button1);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
@@ -112,15 +110,6 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(100, 23);
             textBox1.TabIndex = 5;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(57, 342);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 4;
-            button1.Text = "Spiel";
-            button1.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -216,22 +205,24 @@
             // 
             // button2
             // 
-            button2.Location = new Point(138, 317);
+            button2.BackColor = Color.IndianRed;
+            button2.Location = new Point(124, 317);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
             button2.TabIndex = 2;
             button2.Text = "Delete";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // saveButton
             // 
+            saveButton.BackColor = SystemColors.Info;
             saveButton.Location = new Point(27, 317);
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(75, 23);
             saveButton.TabIndex = 1;
-            saveButton.Text = "GO";
-            saveButton.UseVisualStyleBackColor = true;
+            saveButton.Text = "UPDATE";
+            saveButton.UseVisualStyleBackColor = false;
             saveButton.Click += saveButton_Click;
             // 
             // listBox1
@@ -243,7 +234,7 @@
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(186, 274);
             listBox1.TabIndex = 0;
-           
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // Eidit
             // 
@@ -274,7 +265,6 @@
         private Label label1;
         private TrackBar trackBar1;
         private TextBox textBox1;
-        private Button button1;
         private Label label4;
         private Label label3;
         private Label label2;
