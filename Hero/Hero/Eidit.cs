@@ -56,58 +56,6 @@ namespace Hero
 
         }
 
-
-        private MySQLDatabase button1_Click(object sender, EventArgs e)
-        {
-            // Bild zuweisen (optional)
-
-
-
-            //Liste der Helden aus der Datenbank abfragen (gefiltert nach UserID)
-            database.OpenConnection();
-
-            string query = $"SELECT id, name, klasse FROM heroes WHERE user_id = '{userid}'";
-            DataTable userData = database.ExecuteQuery(query);
-
-            database.CloseConnection();
-
-            foreach (DataRow row in userData.Rows)
-            {
-                string heroName = row["name"].ToString();
-                string heroClass = row["klasse"].ToString();
-                int heroId = Convert.ToInt32(row["id"]);
-                listBox1.Items.Add($"{heroId}: {heroName} - {heroClass}");
-            }
-            return database;
-
-            if (heroid < 0)
-            {
-                MessageBox.Show("Neuer Held --> INSERT");
-                database.OpenConnection();
-                string quer = $"INSERT INTO heroes (name, klasse, hp, att, def, deleted, custom, user_id) VALUES ('{textBox1.Text}', '{comboBox1.Text}', {(int)trackBar1.Value}, {(int)trackBar2.Value}, {(int)trackBar2.Value}, 0, 0, {userid})";
-                Debug.WriteLine(quer);
-                DataTable userDat = database.ExecuteQuery(quer);
-                database.CloseConnection();
-
-            }
-            else
-            {
-                MessageBox.Show("eingelesener Held --> UPDATE");
-                //UPDATE `k215510_b7i-211`.`heroes` SET `hp`=24, `att`=1, `def`=0, `deleted`=1, `custom`=1, `user_id`=4 WHERE  `id`=2004;
-                database.OpenConnection();
-
-                string quer = $"UPDATE heroes SET name = '{textBox1.Text}', klasse = '{comboBox1.Text}', att = {(int)trackBar1.Value}, def = {(int)trackBar2.Value}, user_id = {userid} WHERE id = '{heroid}'";
-                DataTable userDat = database.ExecuteQuery(quer);
-
-                database.CloseConnection();
-            }
-            fillListBox();
-
-
-
-
-        }
-
         private DataTable GetUserData(int userid)
         {
             database.OpenConnection();
@@ -258,6 +206,46 @@ namespace Hero
                 MessageBox.Show("Hero nicht gefunden.");
                 return;
             }
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+      
+        private DataTable GetChatData()
+        {
+            database.OpenConnection();
+            string query = $"SELECT * FROM `k215510_b7i-211`.chat;";
+            DataTable userData = database.ExecuteQuery(query);
+            database.CloseConnection();
+            return userData;
+        }
+        private DataTable AddMessage(int heroid, string Message)
+        {
+            database.OpenConnection();
+            string query = $"INSERT INTO `chat` (`heroid`, `message`) VALUES ('{heroid}', '{Message}');";
+            DataTable userData = database.ExecuteQuery(query);
+            database.CloseConnection();
+            return userData;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            listBox2.Items.Clear();
+            GetChatData();
+            DataTable chatdata = GetChatData();
+
+            for (int i = 1; i < chatdata.Rows.Count; i++)
+            {
+                DataRow chatdatarow = chatdata.Rows[i];
+                string heroname = chatdatarow["heroid"].ToString();
+                string messag = chatdatarow["message"].ToString();
+                listBox2.Items.Add("Username:" + heroname + " Message: " + messag);
+
+            }
+            string message = textBox2.Text.ToString();
+            AddMessage(1, message);
         }
     }
 }

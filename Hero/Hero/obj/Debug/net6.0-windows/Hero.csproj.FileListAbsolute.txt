@@ -75,3 +75,4 @@ C:\Users\Sami.Rasho\Documents\Hero Manager\Hero\Hero\obj\Debug\net6.0-windows\He
 C:\Users\Sami.Rasho\Documents\Hero Manager\Hero\Hero\obj\Debug\net6.0-windows\Hero.genruntimeconfig.cache
 C:\Users\Sami.Rasho\Documents\Hero Manager\Hero\Hero\obj\Debug\net6.0-windows\ref\Hero.dll
 C:\Users\Sami.Rasho\Documents\Hero Manager\Hero\Hero\obj\Debug\net6.0-windows\Hero.hero.resources
+C:\Users\Sami.Rasho\Documents\Hero Manager\Hero\Hero\obj\Debug\net6.0-windows\Hero.Chat.resources

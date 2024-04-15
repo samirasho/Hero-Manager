@@ -46,6 +46,9 @@
             button2 = new Button();
             saveButton = new Button();
             listBox1 = new ListBox();
+            listBox2 = new ListBox();
+            textBox2 = new TextBox();
+            bt = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)trackBar2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trackBar1).BeginInit();
@@ -153,9 +156,9 @@
             panel2.Controls.Add(label5);
             panel2.Controls.Add(pictureBox2);
             panel2.Controls.Add(pictureBox1);
-            panel2.Location = new Point(263, 34);
+            panel2.Location = new Point(227, 34);
             panel2.Name = "panel2";
-            panel2.Size = new Size(240, 386);
+            panel2.Size = new Size(220, 386);
             panel2.TabIndex = 1;
             // 
             // label5
@@ -186,7 +189,7 @@
             pictureBox1.ErrorImage = Properties.Resources.Wizard;
             pictureBox1.Image = Properties.Resources.Wizard;
             pictureBox1.InitialImage = Properties.Resources.Wizard;
-            pictureBox1.Location = new Point(19, 45);
+            pictureBox1.Location = new Point(11, 45);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(203, 134);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -198,9 +201,9 @@
             panel3.Controls.Add(button2);
             panel3.Controls.Add(saveButton);
             panel3.Controls.Add(listBox1);
-            panel3.Location = new Point(545, 34);
+            panel3.Location = new Point(453, 34);
             panel3.Name = "panel3";
-            panel3.Size = new Size(230, 386);
+            panel3.Size = new Size(227, 386);
             panel3.TabIndex = 2;
             // 
             // button2
@@ -236,12 +239,45 @@
             listBox1.TabIndex = 0;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
+            // listBox2
+            // 
+            listBox2.BackColor = SystemColors.Info;
+            listBox2.FormattingEnabled = true;
+            listBox2.ItemHeight = 15;
+            listBox2.Location = new Point(700, 68);
+            listBox2.Name = "listBox2";
+            listBox2.Size = new Size(225, 259);
+            listBox2.TabIndex = 3;
+            listBox2.SelectedIndexChanged += listBox2_SelectedIndexChanged;
+            // 
+            // textBox2
+            // 
+            textBox2.BackColor = SystemColors.Info;
+            textBox2.Location = new Point(700, 350);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(128, 23);
+            textBox2.TabIndex = 4;
+            // 
+            // bt
+            // 
+            bt.BackColor = SystemColors.Info;
+            bt.Location = new Point(850, 350);
+            bt.Name = "bt";
+            bt.Size = new Size(75, 23);
+            bt.TabIndex = 5;
+            bt.Text = "Chat";
+            bt.UseVisualStyleBackColor = false;
+            bt.Click += button1_Click;
+            // 
             // Eidit
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(954, 603);
+            Controls.Add(bt);
+            Controls.Add(textBox2);
+            Controls.Add(listBox2);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -257,6 +293,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -279,5 +316,8 @@
         private Label label6;
         private Button saveButton;
         private Button button2;
+        private ListBox listBox2;
+        private TextBox textBox2;
+        private Button bt;
     }
 }
