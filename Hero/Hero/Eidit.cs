@@ -208,50 +208,9 @@ namespace Hero
             }
         }
 
-        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
+       
 
-        }
 
-        private DataTable GetChatData()
-        {
-            database.OpenConnection();
-            string query = $"SELECT * FROM `k215510_b7i-211`.chat;";
-            DataTable userData = database.ExecuteQuery(query);
-            database.CloseConnection();
-            return userData;
-        }
-        private DataTable AddMessage(int heroid, string Message)
-        {
-            database.OpenConnection();
-            string query = $"INSERT INTO `chat` (`heroid`, `message`) VALUES ('{heroid}', '{Message}');";
-            DataTable userData = database.ExecuteQuery(query);
-            database.CloseConnection();
-            return userData;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            listBox2.Items.Clear();
-            GetChatData();
-            DataTable chatdata = GetChatData();
-
-            for (int i = 1; i < chatdata.Rows.Count; i++)
-            {
-                DataRow chatdatarow = chatdata.Rows[i];
-                string heroname = chatdatarow["heroid"].ToString();
-                string messag = chatdatarow["message"].ToString();
-                listBox2.Items.Add("Username:" + heroname + " Message: " + messag);
-
-            }
-            string message = textBox2.Text.ToString();
-            AddMessage(1, message);
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            
-        }
     }
 }
 

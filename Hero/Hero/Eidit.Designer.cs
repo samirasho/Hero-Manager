@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Eidit));
             panel1 = new Panel();
             label6 = new Label();
             comboBox1 = new ComboBox();
@@ -47,10 +46,6 @@
             button2 = new Button();
             saveButton = new Button();
             listBox1 = new ListBox();
-            listBox2 = new ListBox();
-            textBox2 = new TextBox();
-            bt = new Button();
-            pictureBox3 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)trackBar2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trackBar1).BeginInit();
@@ -58,7 +53,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -242,60 +236,12 @@
             listBox1.TabIndex = 0;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
-            // listBox2
-            // 
-            listBox2.BackColor = SystemColors.Info;
-            listBox2.FormattingEnabled = true;
-            listBox2.ItemHeight = 15;
-            listBox2.Location = new Point(700, 38);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(225, 259);
-            listBox2.TabIndex = 3;
-            listBox2.SelectedIndexChanged += listBox2_SelectedIndexChanged;
-            // 
-            // textBox2
-            // 
-            textBox2.BackColor = SystemColors.Info;
-            textBox2.Location = new Point(700, 331);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(128, 23);
-            textBox2.TabIndex = 4;
-            // 
-            // bt
-            // 
-            bt.BackColor = SystemColors.Info;
-            bt.Location = new Point(850, 331);
-            bt.Name = "bt";
-            bt.Size = new Size(75, 23);
-            bt.TabIndex = 5;
-            bt.Text = "Chat";
-            bt.UseVisualStyleBackColor = false;
-            bt.Click += button1_Click;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox3.ErrorImage = (Image)resources.GetObject("pictureBox3.ErrorImage");
-            pictureBox3.Image = Properties.Resources.forest__1_;
-            pictureBox3.InitialImage = Properties.Resources.forest__1_;
-            pictureBox3.Location = new Point(504, 404);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(94, 94);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 6;
-            pictureBox3.TabStop = false;
-            pictureBox3.Click += pictureBox3_Click;
-            // 
             // Eidit
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             ClientSize = new Size(954, 603);
-            Controls.Add(pictureBox3);
-            Controls.Add(bt);
-            Controls.Add(textBox2);
-            Controls.Add(listBox2);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -310,9 +256,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -335,9 +279,5 @@
         private Label label6;
         private Button saveButton;
         private Button button2;
-        private ListBox listBox2;
-        private TextBox textBox2;
-        private Button bt;
-        private PictureBox pictureBox3;
     }
 }
