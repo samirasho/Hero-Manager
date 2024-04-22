@@ -58,6 +58,12 @@ namespace Hero
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
             database.OpenConnection();
             string query = $"SELECT TileId, CoordX, CoordY, CanBeEntered, LandscapeType, Resources, HeroId FROM world ;";
             DataTable worldData = database.ExecuteQuery(query);
@@ -140,7 +146,7 @@ namespace Hero
             {
                 case "Mountain":
                     {
-                        tileBitmap = Resources.stump;
+                        tileBitmap = Resources.ovE9KM;
                         break;
                     }
                 case "Meadow":
@@ -155,14 +161,13 @@ namespace Hero
                     }
                 default:
                     {
-                        tileBitmap = Resources.forest__1_;
+                        tileBitmap = Resources.ovE9KM;
                         break;
                     }
 
 
             }
             return tileBitmap;
-
         }
     }
 }

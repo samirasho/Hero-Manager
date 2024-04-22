@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Chat));
             textBox1 = new TextBox();
             button1 = new Button();
             listBox1 = new ListBox();
             pictureBox1 = new PictureBox();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -67,16 +67,30 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.ErrorImage = (Image)resources.GetObject("pictureBox1.ErrorImage");
-            pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
-            pictureBox1.Location = new Point(217, 12);
+            pictureBox1.ErrorImage = Properties.Resources.ovE9KM;
+            pictureBox1.Image = Properties.Resources.ovE9KM;
+            pictureBox1.InitialImage = Properties.Resources.ovE9KM;
+            pictureBox1.Location = new Point(437, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(974, 625);
+            pictureBox1.Size = new Size(706, 625);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
+            pictureBox1.UseWaitCursor = true;
             pictureBox1.WaitOnLoad = true;
             pictureBox1.Click += pictureBox1_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Chartreuse;
+            button2.BackgroundImage = Properties.Resources.ovE9KM;
+            button2.Location = new Point(12, 521);
+            button2.Name = "button2";
+            button2.Size = new Size(97, 93);
+            button2.TabIndex = 4;
+            button2.Text = " BG";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // Chat
             // 
@@ -84,6 +98,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Chartreuse;
             ClientSize = new Size(1185, 639);
+            Controls.Add(button2);
             Controls.Add(pictureBox1);
             Controls.Add(listBox1);
             Controls.Add(button1);
@@ -101,5 +116,6 @@
         private Button button1;
         private ListBox listBox1;
         private PictureBox pictureBox1;
+        private Button button2;
     }
 }
