@@ -10,9 +10,8 @@
 
 namespace Hero.Properties {
     using System;
-    using System.Drawing;
-
-
+    
+    
     /// <summary>
     ///   Eine stark typisierte Ressourcenklasse zum Suchen von lokalisierten Zeichenfolgen usw.
     /// </summary>
@@ -24,9 +23,7 @@ namespace Hero.Properties {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
-        internal static object barbarian;
-        internal static Image wizard;
-        internal static Image standard;
+        
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
@@ -69,6 +66,16 @@ namespace Hero.Properties {
         internal static System.Drawing.Bitmap Barbarian {
             get {
                 object obj = ResourceManager.GetObject("Barbarian", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap forest__1_ {
+            get {
+                object obj = ResourceManager.GetObject("forest (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
