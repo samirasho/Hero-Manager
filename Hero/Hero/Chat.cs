@@ -108,6 +108,7 @@ namespace Hero
             }
 
             return;
+
         }
 
         private Bitmap checkHero(int heroid)
@@ -126,7 +127,7 @@ namespace Hero
 
             if (resources == "Wood")
             {
-                resource = Resources.ovE;
+                resource = Resources.ovE9KM;
             }
 
             return resource;
@@ -134,27 +135,27 @@ namespace Hero
 
         private Bitmap LoadTileBitmap(string landscapeType)
         {
-            Bitmap tileBitmap = Resources.ovE;
+            Bitmap tileBitmap = Resources.crop;
             switch (landscapeType)
             {
                 case "Mountain":
                     {
-                        tileBitmap = Resources.forest__1_;
+                        tileBitmap = Resources.stump;
                         break;
                     }
                 case "Meadow":
                     {
-                        tileBitmap = Resources._6FhfDE;
+                        tileBitmap = Resources.forest__1_;
                         break;
                     }
                 case "Forest":
                     {
-                        tileBitmap = Resources.forest__1_;
+                        tileBitmap = Resources.crop;
                         break;
                     }
                 default:
                     {
-                        tileBitmap = Resources._6FhfDE;
+                        tileBitmap = Resources.forest__1_;
                         break;
                     }
 

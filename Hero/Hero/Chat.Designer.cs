@@ -38,6 +38,7 @@
             // 
             // textBox1
             // 
+            textBox1.BackColor = Color.Chartreuse;
             textBox1.Location = new Point(12, 286);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(118, 23);
@@ -45,32 +46,33 @@
             // 
             // button1
             // 
+            button1.BackColor = Color.Chartreuse;
             button1.Location = new Point(136, 286);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 1;
             button1.Text = "CHAT";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // listBox1
             // 
+            listBox1.BackColor = Color.Chartreuse;
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(12, 95);
+            listBox1.Location = new Point(12, 96);
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(199, 184);
             listBox1.TabIndex = 2;
             // 
             // pictureBox1
             // 
-            pictureBox1.BackgroundImage = Properties.Resources._6FhfDE;
             pictureBox1.ErrorImage = (Image)resources.GetObject("pictureBox1.ErrorImage");
             pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
-            pictureBox1.Location = new Point(237, 12);
+            pictureBox1.Location = new Point(217, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(921, 573);
-            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.Size = new Size(974, 625);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             pictureBox1.WaitOnLoad = true;
@@ -80,6 +82,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Chartreuse;
             ClientSize = new Size(1185, 639);
             Controls.Add(pictureBox1);
             Controls.Add(listBox1);

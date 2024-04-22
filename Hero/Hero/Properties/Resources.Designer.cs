@@ -83,6 +83,16 @@ namespace Hero.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap crop {
+            get {
+                object obj = ResourceManager.GetObject("crop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap forest__1_ {
             get {
                 object obj = ResourceManager.GetObject("forest (1)", resourceCulture);
@@ -106,6 +116,16 @@ namespace Hero.Properties {
         internal static System.Drawing.Bitmap ovE9KM {
             get {
                 object obj = ResourceManager.GetObject("ovE9KM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stump {
+            get {
+                object obj = ResourceManager.GetObject("stump", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
