@@ -36,6 +36,7 @@ namespace Hero
             InitializeComponent();
 
             database = new MySQLDatabase("91.204.46.137", "k215510_b7i-211", "k215510_b7i-211", "Er$1234Er$");
+            
 
         }
 
@@ -84,8 +85,11 @@ namespace Hero
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            
             switch (comboBox1.Text)
             {
+
+                 
                 case "Barbarian":
 
                     pictureBox2.Show();
@@ -105,7 +109,7 @@ namespace Hero
                     listBox1.Text = textBox1.Text;
                     label5.Text = textBox1.Text;
                     break;
-
+         
                 default:
                     pictureBox1.Image = Properties.Resources.Barbarian;
                     pictureBox2.Refresh();
@@ -113,10 +117,11 @@ namespace Hero
                     pictureBox1.Visible = true;
                     break;
             }
+            
             // spiel
             if (heroid < 0)
             {
-                MessageBox.Show(listBox1.Text);
+                MessageBox.Show(listBox1.Text);               
                 database.OpenConnection();
                 string quer = $"INSERT INTO heroes (name, klasse, hp, att, def, deleted, custom, user_id) VALUES ('{textBox1.Text}', '{comboBox1.Text}', {(int)trackBar1.Value}, {(int)trackBar2.Value}, {(int)trackBar2.Value}, 0, 0, {userid})";
                 Debug.WriteLine(quer);
@@ -147,7 +152,7 @@ namespace Hero
             DataTable userData = database.ExecuteQuery(query);
 
             database.CloseConnection();
-
+              
             listBox1.Items.Clear();
 
             foreach (DataRow row in userData.Rows)
@@ -173,14 +178,12 @@ namespace Hero
                 default:
                     break;
             }
-
-
+           
         }
-
         private void listBox1_SelectedIndexChanged(object sender, MouseEventArgs e)
         {
 
-
+           
 
         }
 
@@ -189,10 +192,16 @@ namespace Hero
 
 
             //Index ermitteln und heroid extrahieren
-            string selectedRow = listBox1.SelectedItem.ToString(); //<-- Eintrag wird als String geholt
-            string stringBeforeChar = selectedRow.Substring(0, selectedRow.IndexOf(":")); //<-- in dem Fall, ID extrahieren, in dem der Text vor dem Doppelpunkt eingelesen wird
-            heroid = Convert.ToInt32(stringBeforeChar); // in int konvertieren und als heroid speichern
+            //string selectedRow = listBox1.SelectedItem.ToString(); //<-- Eintrag wird als String geholt
+            //string stringBeforeChar = selectedRow.Substring(0, selectedRow.IndexOf(":")); //<-- in dem Fall, ID extrahieren, in dem der Text vor dem Doppelpunkt eingelesen wird
+            //  heroid = Convert.ToInt32(stringBeforeChar); // in int konvertieren und als heroid speichern
+            string[] data = { comboBox1.Text, textBox1.Text };
+            listBox1.Items.Clear();
+            foreach (string item in data)
+            {
+                listBox1.Items.Add(item);
 
+            }
             //Datenbankoperationen, danach zuweisen der Werte
             database.OpenConnection();
 
@@ -208,7 +217,7 @@ namespace Hero
             }
         }
 
-       
+
 
 
     }
