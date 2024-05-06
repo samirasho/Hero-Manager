@@ -39,15 +39,15 @@
             // textBox1
             // 
             textBox1.BackColor = Color.Chartreuse;
-            textBox1.Location = new Point(12, 286);
+            textBox1.Location = new Point(12, 376);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(118, 23);
+            textBox1.Size = new Size(119, 23);
             textBox1.TabIndex = 0;
             // 
             // button1
             // 
             button1.BackColor = Color.Chartreuse;
-            button1.Location = new Point(136, 286);
+            button1.Location = new Point(136, 376);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 1;
@@ -60,19 +60,20 @@
             listBox1.BackColor = Color.Chartreuse;
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(12, 96);
+            listBox1.Location = new Point(12, 21);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(199, 184);
+            listBox1.Size = new Size(199, 349);
             listBox1.TabIndex = 2;
             // 
             // pictureBox1
             // 
-            pictureBox1.ErrorImage = Properties.Resources.ovE9KM;
-            pictureBox1.Image = Properties.Resources.ovE9KM;
-            pictureBox1.InitialImage = Properties.Resources.ovE9KM;
-            pictureBox1.Location = new Point(437, 12);
+            pictureBox1.AccessibleRole = AccessibleRole.Diagram;
+            pictureBox1.BackColor = Color.Chartreuse;
+            pictureBox1.ErrorImage = null;
+            pictureBox1.InitialImage = null;
+            pictureBox1.Location = new Point(433, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(706, 625);
+            pictureBox1.Size = new Size(723, 615);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
@@ -83,7 +84,6 @@
             // button2
             // 
             button2.BackColor = Color.Chartreuse;
-            button2.BackgroundImage = Properties.Resources.ovE9KM;
             button2.Location = new Point(12, 521);
             button2.Name = "button2";
             button2.Size = new Size(97, 93);

@@ -19,6 +19,7 @@ namespace Hero
         {
             InitializeComponent();
             database = new MySQLDatabase("91.204.46.137", "k215510_b7i-211", "k215510_b7i-211", "Er$1234Er$");
+
         }
 
         private DataTable GetChatData()
@@ -101,9 +102,9 @@ namespace Hero
                         int y = CoordY * 32; // 32 ist die Höhe eines Tiles
 
                         // Zeichne das Tile auf der Bitmap
-                        graphics.DrawImage(tileBitmap, x, y);
-                        graphics.DrawImage(layerBitmap, x, y);
-                        graphics.DrawImage(playerBitmap, x, y);
+                        graphics.DrawImage(tileBitmap, x, y, tileBitmap.Width, tileBitmap.Height);
+                        graphics.DrawImage(layerBitmap, x, y, tileBitmap.Width, tileBitmap.Height);
+                        graphics.DrawImage(playerBitmap, x, y, tileBitmap.Width, tileBitmap.Height);
 
                     }
                     // Zeige die fertige Bitmap auf der PictureBox an
@@ -119,7 +120,7 @@ namespace Hero
 
         private Bitmap checkHero(int heroid)
         {
-            Bitmap hero = new Bitmap(32, 32);
+            Bitmap hero = new Bitmap(30, 65);
             if (heroid > 0)
             {
                 hero = Resources.forest__1_;
@@ -133,7 +134,7 @@ namespace Hero
 
             if (resources == "Wood")
             {
-                resource = Resources.ovE9KM;
+                resource = Resources.mountain;
             }
 
             return resource;
@@ -141,12 +142,12 @@ namespace Hero
 
         private Bitmap LoadTileBitmap(string landscapeType)
         {
-            Bitmap tileBitmap = Resources.crop;
+            Bitmap tileBitmap = Resources.forest__1_;
             switch (landscapeType)
             {
                 case "Mountain":
                     {
-                        tileBitmap = Resources.ovE9KM;
+                        tileBitmap = Resources.mountain;
                         break;
                     }
                 case "Meadow":
@@ -156,12 +157,12 @@ namespace Hero
                     }
                 case "Forest":
                     {
-                        tileBitmap = Resources.crop;
+                        tileBitmap = Resources.forest__1_;
                         break;
                     }
                 default:
                     {
-                        tileBitmap = Resources.ovE9KM;
+                        tileBitmap = Resources.mountain;
                         break;
                     }
 

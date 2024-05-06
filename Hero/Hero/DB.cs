@@ -53,7 +53,7 @@ namespace Hero
             {
                 MessageBox.Show("Anmeldung erfolgreich! Willkommen, " + username + "!");
 
-                Eidit eidit = new Eidit();
+                Chat eidit = new Chat();
                 eidit.FormClosed += (s, args) => this.Close(); // Close Form1 when Form2 closes
                 eidit.Show();
                 this.Hide();

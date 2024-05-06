@@ -36,6 +36,7 @@ namespace Hero
             InitializeComponent();
 
             database = new MySQLDatabase("91.204.46.137", "k215510_b7i-211", "k215510_b7i-211", "Er$1234Er$");
+           
             
 
         }
@@ -85,13 +86,7 @@ namespace Hero
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            string[] data = { comboBox1.Text,textBox1.Text};
-            listBox1.Items.Clear();
-            foreach (string item in data)
-            {
-                listBox1.Items.Add(item);
-                
-            }
+           
             switch (comboBox1.Text)
             {
 
@@ -166,7 +161,7 @@ namespace Hero
                 string heroName = row["name"].ToString();
                 string heroClass = row["klasse"].ToString();
                 int heroId = Convert.ToInt32(row["id"]);
-                listBox1.Items.Add($"{heroId}: {heroName} - {heroClass}");
+                listBox1.Items.Add( $"{heroId}: {heroName} - {heroClass}");
             }
 
         }
@@ -183,6 +178,7 @@ namespace Hero
                     break;
                 default:
                     break;
+                 
             }
            
         }
